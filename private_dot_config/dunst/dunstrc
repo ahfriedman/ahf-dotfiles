@@ -109,7 +109,7 @@
     #  * foreground: use the same color as the foreground;
     #  * frame: use the same color as the frame;
     #  * anything else will be interpreted as a X color.
-    separator_color = frame
+    separator_color = auto 
 
     # Sort type.
     # possible values are:
@@ -128,7 +128,7 @@
 
     ### Text ###
 
-    font = Monospace 8
+    font = JetBrainsMono Nerd Font 8
 
     # The spacing between lines.  If the height is smaller than the
     # font height, it will get raised to the font height.
