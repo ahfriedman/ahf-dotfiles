@@ -34,5 +34,12 @@ export QT_IM_MODULE=ibus
 ibus-daemon -d -x
 
 
+# Set capslock to be the compose key, 
+# and capslock to be shift + compose (caps)
 setxkbmap -option caps:escape_shifted_capslock 
 setxkbmap -option compose:caps
+
+# Ensure keyboard is set to be us symbolic 
+setxkbmap us symbolic 
+
+
