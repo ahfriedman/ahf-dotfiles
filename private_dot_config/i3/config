@@ -254,3 +254,8 @@ bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -n
 bindsym $mod+x exec --no-startup-id rofi -show find -modi find:~/.local/share/rofi/finder.sh 
 
 # -theme ~/.config/rofi/launchers/type-1/style-5.rasi
+
+
+# Moving workspaces between screens 
+bindsym $mod+n move workspace to output left 
+bindsym $mod+m move workspace to output right 
