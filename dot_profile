@@ -43,3 +43,7 @@ setxkbmap -option compose:caps
 setxkbmap us symbolic 
 
 
+# SYSTEM_SPECIFIC 
+# Make trackpoint easier to use
+xinput --set-prop "TPPS/2 ALPS TrackPoint" "libinput Accel Profile Enabled" 0 1
+xinput --set-prop "TPPS/2 ALPS TrackPoint" "libinput Accel Speed" 0.8
