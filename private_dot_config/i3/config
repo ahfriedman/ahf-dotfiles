@@ -267,3 +267,5 @@ bindsym $mod+Shift+w exec --no-startup-id bitwarden
 bindsym $mod+b exec --no-startup-id ~/Downloads/i3/rofi-bluetooth/rofi-bluetooth
 
 bindsym $mod+o exec --no-startup-id ~/Downloads/i3/rofi-search/rofi-search
+
+exec --no-startup-id ~/Downloads/i3/i3-battery-popup/i3-battery-popup -L 20 -N
