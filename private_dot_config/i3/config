@@ -185,7 +185,20 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
+mode "gaps" {
+bindsym $mod+z			gaps outer current plus 5
+bindsym $mod+Shift+z 	gaps outer current minus 5
+bindsym $mod+x			gaps inner current plus 5
+bindsym $mod+Shift+x 	gaps inner current minus 5
+
+bindsym Return mode "default"
+bindsym Escape mode "default"
+bindsym $mod+g mode "default"
+}
+
 bindsym $mod+r mode "resize"
+bindsym $mod+g mode "gaps"
+
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds 
@@ -202,7 +215,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 gaps outer 0
 gaps inner 7
-smart_gaps on
+smart_gaps off
 # smart_borders on
 
 default_border pixel 2
@@ -233,16 +246,14 @@ bindsym $mod+Print exec flameshot gui
 bindsym Print exec --no-startup-id ~/.config/rofi/applets/bin/screenshot.sh
 
 # class                 border  backgr. text    indicator child_border
-# client.focused          #4c7899 #285577 #ffffff #2e9ef4   #285577
-# client.focused          #4c7899 #3f3f3f #ffffff #2e9ef4   #285577
-client.focused          #fba922 #3f3f3f #ffffff #2e9ef4   #285577
+client.focused          #fba922 #3f3f3f #ffffff #2e9ef4   #2e9ef4
 # client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 # client.focused_inactive #333333 #2f2f2f #ffffff #484e50   #5f676a
 client.focused_inactive #333333 #2f2f2f #ffffff #484e50 #5f676a
 # client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 # client.unfocused        #333333 #000000 #ffffff #292d2e   #222222
 client.unfocused        #33333300  #00000050 #ffffff #292d2e #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.urgent           #2f343a #900000 #ffffff #900000   #ff5577
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
@@ -254,18 +265,20 @@ bindsym $mod+F12 exec --no-startup-id dbus-send --print-reply --dest=com.ahfried
 
 bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -theme ~/.config/rofi/launchers/type-1/style-5.rasi
 
-bindsym $mod+slash exec --no-startup-id rofi -show find -modi find:~/.local/share/rofi/finder.sh 
+bindsym $mod+slash exec --no-startup-id "rofi -show find -modi find:~/.local/share/rofi/finder.sh -theme ~/.config/rofi/launchers/type-1/style-5.rasi -theme-str 'window{width: 70em;}'"
 
 # -theme ~/.config/rofi/launchers/type-1/style-5.rasi
 
 
 # Moving workspaces between screens 
-bindsym $mod+n move workspace to output left 
-bindsym $mod+m move workspace to output right
+bindsym $mod+bracketleft move workspace to output left 
+bindsym $mod+bracketright move workspace to output right
 
 bindsym $mod+Shift+w exec --no-startup-id bitwarden
 bindsym $mod+b exec --no-startup-id ~/Downloads/i3/rofi-bluetooth/rofi-bluetooth
 
 bindsym $mod+o exec --no-startup-id ~/Downloads/i3/rofi-search/rofi-search
+
+bindsym $mod+n exec --no-startup-id ~/Downloads/i3/rofi-network-manager/src/ronema
 
 exec --no-startup-id ~/Downloads/i3/i3-battery-popup/i3-battery-popup -L 20 -N
