@@ -215,8 +215,8 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 gaps outer 0
 gaps inner 7
-smart_gaps off
-# smart_borders on
+smart_gaps on
+smart_borders on
 
 default_border pixel 2
 # for_window [class=".*"] border pixel 0
@@ -246,10 +246,10 @@ bindsym $mod+Print exec flameshot gui
 bindsym Print exec --no-startup-id ~/.config/rofi/applets/bin/screenshot.sh
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #fba922 #3f3f3f #ffffff #2e9ef4   #2e9ef4
+client.focused          #fba922 #3f3f3f #ffffff #f0c674   #2e9ef4
 # client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
 # client.focused_inactive #333333 #2f2f2f #ffffff #484e50   #5f676a
-client.focused_inactive #333333 #2f2f2f #ffffff #484e50 #5f676a
+client.focused_inactive #f0c674 #2f2f2f #ffffff #484e50 #5f676a
 # client.unfocused        #333333 #222222 #888888 #292d2e   #222222
 # client.unfocused        #333333 #000000 #ffffff #292d2e   #222222
 client.unfocused        #33333300  #00000050 #ffffff #292d2e #222222
@@ -282,3 +282,8 @@ bindsym $mod+o exec --no-startup-id ~/Downloads/i3/rofi-search/rofi-search
 bindsym $mod+n exec --no-startup-id ~/Downloads/i3/rofi-network-manager/src/ronema
 
 exec --no-startup-id ~/Downloads/i3/i3-battery-popup/i3-battery-popup -L 20 -N
+
+title_align center
+bindsym $mod+Shift+s sticky toggle
+bindsym $mod+grave move scratchpad
+bindsym $mod+plus scratchpad show
