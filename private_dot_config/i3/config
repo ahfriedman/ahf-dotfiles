@@ -150,6 +150,9 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+bindsym $mod+BackSpace workspace back_and_forth
+bindsym $mod+Shift+BackSpace move container to workspace back_and_forth
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -216,7 +219,7 @@ exec_always --no-startup-id ~/.config/polybar/launch.sh
 gaps outer 0
 gaps inner 7
 smart_gaps on
-smart_borders on
+# smart_borders on
 
 default_border pixel 2
 # for_window [class=".*"] border pixel 0
